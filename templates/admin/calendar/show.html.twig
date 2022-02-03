@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Calendar{% endblock %}
+
+{% block body %}
+    <h1>Calendar</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ calendar.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ calendar.title }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ calendar.text }}</td>
+            </tr>
+            <tr>
+                <th>Poster</th>
+                <td>{{ calendar.poster }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ calendar.type }}</td>
+            </tr>
+            <tr>
+                <th>Start_at</th>
+                <td>{{ calendar.startAt ? calendar.startAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_calendar_index') }}">back to list</a>
+
+    <a href="{{ path('admin_calendar_edit', {'id': calendar.id}) }}">edit</a>
+
+    {{ include('admin/calendar/_delete_form.html.twig') }}
+{% endblock %}

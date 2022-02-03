@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Culture index{% endblock %}
+
+{% block body %}
+    <h1>Culture index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Text</th>
+                <th>Poster</th>
+                <th>Family</th>
+                <th>Cycle</th>
+                <th>Exposition</th>
+                <th>Ground</th>
+                <th>Slug</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for culture in cultures %}
+            <tr>
+                <td>{{ culture.id }}</td>
+                <td>{{ culture.title }}</td>
+                <td>{{ culture.text }}</td>
+                <td>{{ culture.poster }}</td>
+                <td>{{ culture.family }}</td>
+                <td>{{ culture.cycle }}</td>
+                <td>{{ culture.exposition }}</td>
+                <td>{{ culture.ground }}</td>
+                <td>{{ culture.slug }}</td>
+                <td>
+                    <a href="{{ path('admin_culture_show', {'id': culture.id}) }}">show</a>
+                    <a href="{{ path('admin_culture_edit', {'id': culture.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_culture_new') }}">Create new</a>
+{% endblock %}

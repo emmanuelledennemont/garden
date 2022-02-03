@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Culture{% endblock %}
+
+{% block body %}
+    <h1>Culture</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ culture.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ culture.title }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ culture.text }}</td>
+            </tr>
+            <tr>
+                <th>Poster</th>
+                <td>{{ culture.poster }}</td>
+            </tr>
+            <tr>
+                <th>Family</th>
+                <td>{{ culture.family }}</td>
+            </tr>
+            <tr>
+                <th>Cycle</th>
+                <td>{{ culture.cycle }}</td>
+            </tr>
+            <tr>
+                <th>Exposition</th>
+                <td>{{ culture.exposition }}</td>
+            </tr>
+            <tr>
+                <th>Ground</th>
+                <td>{{ culture.ground }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ culture.slug }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_culture_index') }}">back to list</a>
+
+    <a href="{{ path('admin_culture_edit', {'id': culture.id}) }}">edit</a>
+
+    {{ include('admin/culture/_delete_form.html.twig') }}
+{% endblock %}
