@@ -29,4 +29,14 @@ class CultureController extends AbstractController
             
         ]);
     }
+
+     /**
+     * @Route("/show", name="show")
+     */
+    public function show(Culture $culture): Response
+    {
+        return $this->render('culture/show.html.twig', [
+            'culture' => $culture,
+        ]);
+    }
 }
