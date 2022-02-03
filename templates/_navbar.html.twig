@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
 <div class="container-fluid">
   <a class="navbar-brand" href="/">
-    <img src="./assets/img/" class="navbar-brand-img" alt="logo">
+    <img src="https://i.ibb.co/518d475/gardenlogo.png" class="navbar-brand-img" alt="logo">
   </a>
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -19,14 +19,14 @@
             ] %}
             {% for link in links %}
                 <li class="nav-item mx-3">
-                    <a class="nav-link text-decoration-none hover {{ app.request.pathinfo == path(link.path) ? 'active' }}"
+                    <a class="nav-link text-decoration-none hover btn-outline-white rounded {{ app.request.pathinfo == path(link.path) ? 'active' }}"
                             {{ app.request.pathinfo == path(link.path) ? 'aria-current="page"' }} href="{{ path(link.path) }}">
                         {{ link.title }}
                     </a>
                 </li>
             {% endfor %}
             
-    <a class="navbar-btn btn btn-sm btn-primary lift ms-auto" href="/" target="_blank"> 
+    <a class="navbar-btn btn btn-sm btn-primary lift ms-auto" href="{{ path('app_login') }}" target="_blank"> 
       Connexion
     </a>
 

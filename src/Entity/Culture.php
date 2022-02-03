@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\CultureRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Culture;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CultureRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=CultureRepository::class)

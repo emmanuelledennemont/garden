@@ -29,4 +29,14 @@ class CalendarController extends AbstractController
             
         ]);
     }
+
+    /**
+     * @Route("/{id}", name="show", methods={"GET"})
+     */
+    public function show(Calendar $calendarCategory): Response
+    {
+        return $this->render('calendar/show.html.twig', [
+            'calendar' => $calendar,
+        ]);
+    }
 }
