@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CalendarController!{% endblock %}
+
+{% block body %}
+  
+<h1 class="text-center my-5">Agenda</h1>
+<div class="container">
+  <div class="row">
+  {% for calendar in calendars %}
+    <div class="col-12 col-md-6 col-lg-4 d-flex">
+      <div class="card mb-6 shadow-light-lg lift lift-lg">
+        <a class="card-img-top" href="#!">
+          <img src="{{ calendar.poster }}" alt="photo" class="card-img-top">
+          <div class="position-relative">
+            <div class="shape shape-bottom shape-fluid-x text-white">
+              <svg viewBox="0 0 2880 480" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2160 0C1440 240 720 240 720 240H0v240h2880V0h-720z" fill="currentColor"/></svg>                  </div>
+            </div>
+        </a>
+
+        <a class="card-body" href="#!">
+          <h3>
+            {{ calendar.title }}
+          </h3>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+  </div> 
+</div> 
+{% endblock %}
