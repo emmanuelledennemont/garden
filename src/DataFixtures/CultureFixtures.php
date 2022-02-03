@@ -34,4 +34,5 @@ class CultureFixtures extends Fixture
         }
             $manager->flush();
     }
+
 }
